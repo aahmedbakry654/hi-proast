@@ -70,7 +70,7 @@ const Footer = () => {
           </h3>
           <div className="location-img-container">
             <a
-              href="https://maps.google.com/?q=123+شارع+التقدم،+القاهرة،+مصر"
+              href="https://maps.app.goo.gl/GT6fG3u9a9mYNHpt5"
               target="_blank"
               rel="noopener noreferrer"
             >

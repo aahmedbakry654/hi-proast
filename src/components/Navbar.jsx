@@ -9,8 +9,8 @@ const Navbar = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "public/images/menu1.jpg",
-    "public/images/menu2.jpg",
+    "/images/menu1.jpg",
+    "/images/menu2.jpg",
    
   ]; // Replace with your image paths
 
