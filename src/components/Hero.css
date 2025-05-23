@@ -1,0 +1,234 @@
+/* إعادة تعيين التنسيقات الأساسية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* تنسيق الحاوية الرئيسية */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d0d0d; /* خلفية سوداء لامعة */
+  overflow: hidden;
+  padding: clamp(1rem, 5vw, 3rem); /* Fixed the clamp syntax */
+}
+
+/* تنسيق المحتوى */
+.hero-content {
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: rgba(255, 255, 255, 0.05); /* خلفية شفافة للمحتوى */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* تأثير زجاجي خفيف */
+}
+
+/* تنسيق العنوان الرئيسي مع تأثير توهج مريح للعين */
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  font-family: 'Cairo', sans-serif;
+  color: #e0f7fa; /* لون سماوي فاتح مريح */
+  text-shadow: 
+    0 0 5px #80deea,
+    0 0 10px #4dd0e1,
+    0 0 20px #26c6da,
+    0 0 30px #00bcd4;
+  animation: softGlow 3s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* تأثير توهج ناعم ومريح */
+@keyframes softGlow {
+  0% {
+    text-shadow: 
+      0 0 5px #80deea,
+      0 0 10px #4dd0e1,
+      0 0 20px #26c6da,
+      0 0 30px #00bcd4;
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #80deea,
+      0 0 15px #4dd0e1,
+      0 0 25px #26c6da,
+      0 0 40px #00bcd4;
+    transform: scale(1.01);
+  }
+}
+
+/* تنسيق النص الفرعي */
+.hero-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 600;
+  font-family: 'Cairo', sans-serif;
+  color: #b0bec5; /* لون رمادي فاتح مريح */
+  text-shadow: 0 0 3px rgba(176, 190, 197, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+/* تنسيق الأزرار */
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* تنسيق كل زر */
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2rem);
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* تأثير التحويم على الأزرار */
+.hero-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* تنسيق زر الهاتف */
+.phone {
+  background: linear-gradient(45deg, #f42411, #fab2ad);
+}
+
+/* تنسيق زر الواتساب */
+.whatsapp {
+  background: linear-gradient(45deg, #0dfc64, #bcf5b2);
+}
+
+/* تنسيق حاوية أيقونة الترجمة في الهيرو */
+.language-container-hero {
+  position: absolute;
+  top: clamp(1rem, 2vw, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  z-index: 20;
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+/* تنسيق أيقونة الترجمة */
+.language-icon-hero {
+  width: clamp(40px, 6vw, 50px);
+  height: clamp(40px, 6vw, 50px);
+  color: #e0f7fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  will-change: transform, filter;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(128, 222, 234, 0.3) 0%, transparent 70%);
+  mix-blend-mode: screen;
+}
+/* الرسوم المتحركة للهالة الدوارة */
+@keyframes rotateHalo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* الرسوم المتحركة للنواة النابضة */
+@keyframes pulseCore {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: clamp(1rem, 2vw, 1.5rem);
+  }
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+  }
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  .hero-button {
+    padding: clamp(0.6rem, 1.2vw, 0.8rem) clamp(1.2rem, 1.8vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .language-container-hero {
+    top: clamp(0.5rem, 1.5vw, 1rem);
+    padding: clamp(0.3rem, 0.8vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem);
+  }
+  .language-icon-hero {
+    width: clamp(35px, 5vw, 45px);
+    height: clamp(35px, 5vw, 45px);
+  }
+  .language-text-hero {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+  .hero-button {
+    padding: clamp(0.5rem, 1vw, 0.7rem) clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+  }
+  .language-container-hero {
+    top: clamp(0.3rem, 1vw, 0.8rem);
+    padding: clamp(0.2rem, 0.6vw, 0.4rem) clamp(0.6rem, 1vw, 0.8rem);
+  }
+  .language-icon-hero {
+    width: clamp(30px, 4vw, 40px);
+    height: clamp(30px, 4vw, 40px);
+  }
+  .language-text-hero {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+}
+}

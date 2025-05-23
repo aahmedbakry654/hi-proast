@@ -1,0 +1,172 @@
+/* Ensure Font Awesome is included in your project */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+.language-container {
+  position: fixed;
+  top: clamp(1rem, 2vw, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 128, 128, 0.2));
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(93, 78, 78, 0.3);
+  transition: all 0.3s ease;
+}
+
+.language-icon {
+  width: clamp(35px, 5vw, 45px);
+  height: clamp(35px, 5vw, 45px);
+  color: #40c4c4;
+  background: linear-gradient(145deg, rgba(64, 196, 196, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.language-icon svg {
+  width: 60%;
+  height: 60%;
+  stroke: currentColor;
+}
+
+.language-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(64, 196, 196, 0.5);
+}
+
+.language-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #e0f7ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-icons-container {
+  position: fixed;
+  top: 50%;
+  right: clamp(0.5rem, 2vw, 1rem);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  z-index: 1000;
+}
+
+.contact-icon {
+  width: clamp(45px, 6vw, 55px);
+  height: clamp(45px, 6vw, 55px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+}
+
+.contact-icon.whatsapp {
+  color: #25d366;
+  background: linear-gradient(145deg, rgba(37, 211, 102, 0.15), rgba(0, 0, 0, 0.2));
+}
+
+.contact-icon.phone {
+  color: #ff6347;
+  background: linear-gradient(145deg, rgba(255, 99, 71, 0.15), rgba(0, 0, 0, 0.2));
+}
+
+.contact-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, currentColor 10%, transparent 60%);
+  opacity: 0;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px currentColor, 0 0 30px rgba(currentColor, 0.3);
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .language-container {
+    top: clamp(0.5rem, 1.5vw, 1rem);
+    padding: clamp(0.3rem, 0.8vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem);
+  }
+
+  .language-icon {
+    width: clamp(30px, 4vw, 40px);
+    height: clamp(30px, 4vw, 40px);
+  }
+
+  .language-text {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+  }
+
+  .contact-icons-container {
+    right: clamp(0.3rem, 1.5vw, 0.8rem);
+    gap: clamp(0.5rem, 1.5vw, 0.8rem);
+  }
+
+  .contact-icon {
+    width: clamp(40px, 5vw, 50px);
+    height: clamp(40px, 5vw, 50px);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .language-container {
+    top: clamp(0.3rem, 1vw, 0.8rem);
+    padding: clamp(0.2rem, 0.6vw, 0.4rem) clamp(0.6rem, 1vw, 0.8rem);
+  }
+
+  .language-icon {
+    width: clamp(25px, 3vw, 35px);
+    height: clamp(25px, 3vw, 35px);
+  }
+
+  .language-text {
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  }
+
+  .contact-icons-container {
+    right: clamp(0.2rem, 1vw, 0.5rem);
+    gap: clamp(0.4rem, 1vw, 0.6rem);
+  }
+
+  .contact-icon {
+    width: clamp(35px, 4.5vw, 45px);
+    height: clamp(35px, 4.5vw, 45px);
+    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+}
+}
